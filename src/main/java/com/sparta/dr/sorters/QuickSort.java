@@ -1,6 +1,6 @@
 package com.sparta.dr.sorters;
 
-public class QuickSort {
+public class QuickSort implements GenericSorter {
     public static void quickSort(int[] randArray, int lowIndex, int highIndex){
         if(lowIndex >= highIndex){
             return;
@@ -28,5 +28,16 @@ public class QuickSort {
         int temp = randArray[index1];
         randArray[index1] = randArray[index2];
         randArray[index2] = temp;
+    }
+
+    @Override
+    public int[] sortArray(int[] array) {
+        quickSort(array,0, array.length-1);
+        return array;
+    }
+
+    @Override
+    public String getName() {
+        return "Quick Sort";
     }
 }

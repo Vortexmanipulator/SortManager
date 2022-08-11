@@ -1,12 +1,12 @@
 package com.sparta.dr.sorters;
 
-public class MergeSort {
+public class MergeSort implements GenericSorter {
 
-    public static void mergeSort(int[] randArray){
+    public int[] sortArray(int[] randArray){
         int inputLength = randArray.length;
 
         if(inputLength < 2) {
-            return;
+            return randArray;
         }
         int midIndex = inputLength /2;
         int[] leftHalf = new int[midIndex];
@@ -17,12 +17,14 @@ public class MergeSort {
         for (int i = midIndex; i < inputLength; i++) {
             rightHalf[i - midIndex] = randArray[i];
         }
-        mergeSort(leftHalf);
-        mergeSort(rightHalf);
+        sortArray(leftHalf);
+        sortArray(rightHalf);
 
         merge(randArray, leftHalf, rightHalf);
-
+        return randArray;
     }
+
+
     private static void merge(int[] randArray, int[] leftHalf, int[] rightHalf){
         int leftSize = leftHalf.length;
         int rightSize = rightHalf.length;
@@ -36,6 +38,7 @@ public class MergeSort {
             }
             else {
                 randArray[k] = rightHalf[j];
+                j++;
             }
             k++;
         }
@@ -50,5 +53,8 @@ public class MergeSort {
                 k++;
             }
     }
-
+    @Override
+    public String getName() {
+        return "Merge Sort";
+    }
 }

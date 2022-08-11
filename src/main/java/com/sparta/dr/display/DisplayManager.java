@@ -1,35 +1,51 @@
 package com.sparta.dr.display;
 
-import com.sparta.dr.sorters.BinarySort;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DisplayManager {
-    public static void userInputOutput(){
-        Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
+    public int getSorter(){
+
         System.out.println("Enter the number of the sorter you would like to use");
         System.out.println("1. Binary sort \n2. BubbleSort \n3. InsertionSort \n4. MergeSort \n5. QuickSort");
         System.out.print("Enter a number: ");
         int input = scanner.nextInt();
-        int n = scanner.nextInt();
-        switch (input) {
-            case 1:
-                System.out.println("you've chosen Binary Sort");
-                break;
-            case 2:
-                System.out.println("You've chosen Bubble Sort");
-                break;
-            case 3:
-                System.out.println("You've chosen Insertion Sort");
-                break;
-            case 4:
-                System.out.println("You've chosen Merge Sort");
-                break;
-            case 5:
-                System.out.println("You've chosen Quick Sort");
-                break;
-
-        }
+        return input;
 
     }
+
+
+    public int getArrayLength(){
+        System.out.println("What would you like the list size to be?");
+        int input;
+        do{
+            input = scanner.nextInt();
+            if(input < 0){
+                System.out.println("Invalid number entered, please enter something greater than 0");
+            }
+        }while (input < 0);
+        return input;
+    }
+
+
+    public void choiceMade(String name){
+        System.out.println("You have chosen: "+ name);
+    }
+
+    public void arrayBefore(int[] array) {
+        System.out.println("Array before sort: "+ Arrays.toString(array));
+    }
+    public void arrayAfter(int[] array){
+        System.out.println("Array after sort: "+Arrays.toString(array));
+    }
+
+    public void dealWithException(Throwable e){
+        System.err.println(e);
+    }
+    public void timeTaken(double totalTime){
+        System.out.println("The time taken to sort in milliseconds: "+ totalTime);
+    }
+
 }
