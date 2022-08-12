@@ -6,11 +6,10 @@ import com.sparta.dr.sorters.binaryTree.BinaryTree;
 import com.sparta.dr.sorters.binaryTree.BinaryTreeImpl;
 
 public class BinarySort implements GenericSorter {
-
+    public static Logging logging = Logging.setupLogger();
     @Override
     public int[] sortArray(int[] array) {
-        Logging.setupLogger();
-        Logging.logger.info("Binary Sort Has Started");
+        logging.logger.info("Binary Sort Has Started");
         BinaryTree tree = new BinaryTreeImpl(array[0]);
         for (int i = 1; i < array.length; i++) {
             tree.addElement(array[i]);

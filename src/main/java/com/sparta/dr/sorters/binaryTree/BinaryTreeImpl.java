@@ -10,14 +10,20 @@ import java.util.logging.*;
 public class BinaryTreeImpl implements BinaryTree{
     private final Node rootNode;
     private int nodeCount = 1;
+    public static Logger logger = Logger.getLogger("hello");
+    public static Logging logging = Logging.setupLogger();
+
+
+
+
     public BinaryTreeImpl(int elements) {
         rootNode = new Node(elements);
+
     }
     private int i = 0;
 
     @Override
     public int getRootElement() {
-
         return rootNode.getValue();
     }
 

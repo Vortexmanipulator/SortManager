@@ -5,7 +5,7 @@ import java.util.logging.*;
 
 public class Logging {
     public static Logger logger = Logger.getLogger("hello");
-    public static void setupLogger() {
+    public static Logging setupLogger() {
         ConsoleHandler consoleHandler = new ConsoleHandler();
         consoleHandler.setLevel(Level.ALL);
         logger.addHandler(consoleHandler);
@@ -18,6 +18,7 @@ public class Logging {
             throw new RuntimeException(e);
 //
         }
+        return null;
     }
 
 }
