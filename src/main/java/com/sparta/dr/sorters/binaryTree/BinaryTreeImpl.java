@@ -1,11 +1,14 @@
 package com.sparta.dr.sorters.binaryTree;
 
 import com.sparta.dr.exceptions.ChildNotFoundException;
+import com.sparta.dr.logging.Logging;
 
-import java.util.Arrays;
+import java.io.IOException;
+import java.util.logging.*;
+
 
 public class BinaryTreeImpl implements BinaryTree{
-
+    private static Logger logger = Logger.getLogger("BinaryTree");
     private final Node rootNode;
     private int nodeCount = 1;
     public BinaryTreeImpl(int elements) {
@@ -62,17 +65,22 @@ public class BinaryTreeImpl implements BinaryTree{
 
     @Override
     public int[] getSortedTreeAsc() {
+        Logging.setupLogger();
         int i = 0;
         int[] sortedArray = new int[getNumberOfElements()];
+        Logging.logger.info("Sorting values in Ascending Order");
         return returnAscendingTree(sortedArray, rootNode);
+
     }
 
 
 
     @Override
     public int[] getSortedTreeDesc() {
+        Logging.setupLogger();
         i = 0;
         int[] sortedArray = new int[getNumberOfElements()];
+        Logging.logger.info("Sorting values in Descending Order");
         return returnDescendingTree(sortedArray, rootNode);
     }
 

@@ -1,10 +1,7 @@
 package com.sparta.dr;
 
-import com.sparta.dr.display.DisplayManager;
 import com.sparta.dr.exceptions.SorterLoaderException;
-import com.sparta.dr.sorters.BubbleSort;
 import com.sparta.dr.sorters.GenericSorter;
-import com.sparta.dr.sorters.MergeSort;
 import com.sparta.dr.start.ArrayGenerator;
 import com.sparta.dr.start.SortFactory;
 import org.junit.jupiter.api.Assertions;
@@ -12,11 +9,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.Arrays;
 
-public class sortTester {
+public class SortTester {
     static GenericSorter chosenSorter;
     private static int[] randArray;
 
@@ -66,22 +61,25 @@ public class sortTester {
 
     }
 
-//    @Test
-//    @DisplayName("Given user input for size of array is negative return error message")
-//    void givenUserInputForSizeOfArrayIsNegativeReturnErrorMessage() {
-//        DisplayManager displayManager = new DisplayManager();
-//        int input = -1;
-//        InputStream in = new InputStream() {
-//        }
-//        }
-//        System.setIn(in);
-////        Assertions.assertEquals("Invalid number entered, please enter something greater than 0", DisplayManager.getArrayLength());
-//        Assertions.assertEquals("Invalid number entered, please enter something greater than 0",DisplayManager.getArrayLength());
-//
-//        //Made getArrayLength Static
-//        // Made DisplayManager static
+    @Test
+    @DisplayName("Given an array has duplicates return sorted Array")
+    void givenAnArrayHasDuplicatesReturnSortedArray() {
+        int[] array = {18, 18, 3, 6, 3, 200, -12, -18};
 
+        Assertions.assertEquals("[-18, -12, 3, 3, 6, 18, 18, 200]", Arrays.toString(chosenSorter.sortArray(array)));
+        // doesn't work with Binary Sort but that's intended.
+
+    }
+
+    @Test
+    @DisplayName("given an already sorted array, return sorted array")
+    void givenAnAlreadySortedArrayReturnSortedArray() {
+        int[] array = {-18, -12, 3, 3, 6, 18, 200};
+        Assertions.assertEquals("[-18, -12, 3, 6, 18, 200]", Arrays.toString(chosenSorter.sortArray(array)));
     }
 
 
 }
+
+
+

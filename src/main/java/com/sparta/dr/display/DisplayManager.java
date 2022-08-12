@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DisplayManager {
+
     static Scanner scanner = new Scanner(System.in);
     public int getSorter(){
 
