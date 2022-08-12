@@ -8,7 +8,7 @@ public class ArrayGenerator {
         Random rand = new Random();
         int[] randArray = new int[input];
         for (int i = 0; i < input; i++) {
-            randArray[i] = rand.nextInt(10000);
+            randArray[i] = rand.nextInt(input);
         }
         return randArray;
     }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DisplayManager {
-    Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
     public int getSorter(){
 
         System.out.println("Enter the number of the sorter you would like to use");
@@ -17,7 +17,7 @@ public class DisplayManager {
     }
 
 
-    public int getArrayLength(){
+    public static int getArrayLength(){
         System.out.println("What would you like the list size to be?");
         int input;
         do{
