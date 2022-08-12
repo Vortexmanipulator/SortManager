@@ -1,8 +1,12 @@
 package com.sparta.dr.sorters;
 
+import com.sparta.dr.logging.Logging;
+
 public class MergeSort implements GenericSorter {
 
     public int[] sortArray(int[] randArray){
+        Logging.setupLogger();
+        Logging.logger.info("Merge Sort Has Started");
         int inputLength = randArray.length;
 
         if(inputLength < 2) {

@@ -1,7 +1,11 @@
 package com.sparta.dr.sorters;
 
+import com.sparta.dr.logging.Logging;
+
 public class QuickSort implements GenericSorter {
     public static void quickSort(int[] randArray, int lowIndex, int highIndex){
+        Logging.setupLogger();
+        Logging.logger.info("Quick Sort Has Started");
         if(lowIndex >= highIndex){
             return;
         }

@@ -1,8 +1,12 @@
 package com.sparta.dr.sorters;
 
+import com.sparta.dr.logging.Logging;
+
 public class InsertionSort implements GenericSorter {
 
     public int[] sortArray(int[] randArray){
+        Logging.setupLogger();
+        Logging.logger.info("Insertion Sort Has Started");
 
         for (int i = 1; i <= randArray.length-1; i++) {
             int currentValue = randArray[i];
