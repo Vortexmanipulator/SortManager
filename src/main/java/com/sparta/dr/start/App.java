@@ -15,9 +15,8 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 
 public class App {
-    private static Logger logger = Logger.getLogger("mainLogger");
+    private static Logging logging = Logging.setupLogger();
     public static void main(String[] args) {
-        Logging.setupLogger();
 
         Logging.logger.info("Booting Display-Manager");
 

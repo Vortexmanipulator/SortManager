@@ -3,7 +3,7 @@ package com.sparta.dr.sorters;
 import com.sparta.dr.logging.Logging;
 
 public class MergeSort implements GenericSorter {
-    public static Logging logging = Logging.setupLogger();
+    private static Logging logging = Logging.setupLogger();
     public int[] sortArray(int[] randArray){
 
         logging.logger.info("Merge Sort Has Started");

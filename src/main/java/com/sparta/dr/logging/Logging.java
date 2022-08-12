@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.logging.*;
 
 public class Logging {
-    public static Logger logger = Logger.getLogger("hello");
+    public static Logger logger = Logger.getLogger("Info Logger");
     public static Logging setupLogger() {
         ConsoleHandler consoleHandler = new ConsoleHandler();
         consoleHandler.setLevel(Level.ALL);

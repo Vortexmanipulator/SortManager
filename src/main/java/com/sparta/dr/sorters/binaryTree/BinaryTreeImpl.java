@@ -10,7 +10,7 @@ import java.util.logging.*;
 public class BinaryTreeImpl implements BinaryTree{
     private final Node rootNode;
     private int nodeCount = 1;
-    public static Logger logger = Logger.getLogger("hello");
+    private static Logger logger = Logger.getLogger("hello");
     public static Logging logging = Logging.setupLogger();
 
 

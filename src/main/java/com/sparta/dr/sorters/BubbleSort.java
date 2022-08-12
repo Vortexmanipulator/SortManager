@@ -5,7 +5,7 @@ import com.sparta.dr.logging.Logging;
 import java.util.logging.Logger;
 
 public class BubbleSort implements GenericSorter {
-    public static Logging logging = Logging.setupLogger();
+    private static Logging logging = Logging.setupLogger();
     public int[] sortArray(int[] array) {
         logging.logger.info("Bubble Sort Has Started");
         for (int i = 0; i < array.length-1; i++) {
