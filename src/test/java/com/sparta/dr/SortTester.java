@@ -24,7 +24,7 @@ public class SortTester {
         * 4 = Merge Sort
         * 5 = Quick SOrt
         * */
-        chosenSorter = SortFactory.getSorter(1);
+        chosenSorter = SortFactory.getSorter(2);
     }
 
     @Test
